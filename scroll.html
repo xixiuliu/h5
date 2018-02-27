@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>iScroll demo: scrollbars</title>
+
+    <script type="text/javascript" src="res/js/iscroll/iscroll.js"></script>
+
+    <script type="text/javascript">
+
+        var myScroll;
+
+        function loaded () {
+            myScroll = new IScroll('#wrapper', {
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        }
+
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+    </script>
+
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            -ms-touch-action: none;
+        }
+
+        body,ul,li {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        body {
+            font-size: 12px;
+            font-family: ubuntu, helvetica, arial;
+            overflow: hidden; /* this is important to prevent the whole page to bounce */
+        }
+
+        #header {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            background: #CD235C;
+            padding: 0;
+            color: #eee;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #footer {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            background: #444;
+            padding: 0;
+            border-top: 1px solid #444;
+        }
+
+        #wrapper {
+            position: absolute;
+            top: 45px;
+            bottom: 48px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #scroller {
+            position: absolute;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body onload="loaded()">
+<div id="header">iScroll</div>
+
+        <div class="sml_box">
+            <div class="s5_sml_box">
+                <div class="explain_box" id="scrollDiv">
+                    <div id="wrapper">
+                        <div id="scroller">
+                            <div>
+                                <div class="explain_tit">治疗方案<span>（GT1型患者）</span></div>
+                                <div class="explain_cont">
+                                    <div>不同HCV基因型患者，采用的DAA治疗方案以及疗程不同。因此，进行DAA抗病毒治疗前，一定要检测HCV基因型，甚至针对基因1型患者，需要区分为是1a型还是1b型。</div>
+                                    <div class="sml_tit">
+                                        GT1型初治或者PR治疗失败患者DAAs方案选择及疗程：
+                                    </div>
+                                    <div class="exp_tab_tit">
+                                        无IFN方案：
+                                    </div>
+                                    <div class="exp_table_box">
+                                        <table class="exp_tab" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <th width="50%">治疗方案</th>
+                                                <th width="50%">疗   程</th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="plan_name">
+                                                        <p>DCV+ASV</p>
+                                                        <p>SVR率 GT1b 91%-99%</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="plan_cont">
+                                                        <p>24周</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="plan_name">
+                                                        <p>DCV+SOF</p>
+                                                        <p>SVR率 95%-100%</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="plan_cont">
+                                                        <p><span>无肝硬化：</span>12周  </p>
+                                                        <p><span>肝硬化：</span>+RBV 12周</p>
+                                                        <p><span>肝硬化且RBV禁忌/不耐受：</span>24周</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="plan_name">
+                                                        <p>SOF/LDV </p>
+                                                        <p>SVR率 93%-99%</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="plan_cont">
+                                                        <p><span>无肝硬化：</span>12周 </p>
+                                                        <p><span>无肝硬化基线低病毒载量：</span>8周</p>
+                                                        <p><span>代偿期肝硬化：</span>+RBV12周（经治不利于应答因素：24周）</p>
+                                                        <p><span>代偿期肝硬化且RBV禁忌/不耐受：</span>24周</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="plan_name">
+                                                        <p>OBV/PTV/r+Dasabuvir</p>
+                                                        <p>SVR率 91%-100%</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="plan_cont">
+                                                        <p><span>GT1b无肝硬化：</span>12周 </p>
+                                                        <p><span>GT1b肝硬化：</span>+RBV 12周</p>
+                                                        <p><span>GT1a无肝硬化：</span>+RBV 12周</p>
+                                                        <p><span>GT1a肝硬化：</span>+RBV 24周</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="plan_name">
+                                                        <p>SOF+SMV</p>
+                                                        <p>SVR率 93%-96%</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="plan_cont">
+                                                        <p><span>无肝硬化：</span>12周</p>
+                                                        <p><span>肝硬化：</span>+RBV 12周</p>
+                                                        <p><span>肝硬化且RBV禁忌/不耐受：</span>24周</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="exp_tab_tit">
+                                        含IFN方案：
+                                    </div>
+                                    <div class="exp_table_box">
+                                        <table class="exp_tab" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <th width="50%">治疗方案</th>
+                                                <th width="50%">疗   程</th>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="plan_name">
+                                                        <p>PR+SMV<sup>#</sup></p>
+                                                        <p>SVR率 GT1 ：91%</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="plan_cont">
+                                                        <p>12周</p>
+                                                        <p>初始/复发再单独应用PR治疗另12周（总疗程24周）既往部分应答或无应答者应治疗另36周（总疗程48周）</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="plan_name">
+                                                        <p>PR+SOF</p>
+                                                        <p>SVR率 GT1b：82% </p>
+                                                        <p>GT1a：92%</p>
+                                                        <p>PR失败：78%</p>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="plan_cont">
+                                                        <p>12周  </p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="ptop8">
+                                        <p>PR，PegIFNα+RBV；SMV：Simeprevir；SOF：</p>
+                                        <p>Sofosbuvir；LDV：Ledipasvir；OBV：Ombitasvir；</p>
+                                        <p>PTV：Paritaprevir；r：Ritonavir</p>
+                                        <p>#基线存在NS3蛋白酶序列Q80K变异的G1a型感染者，不采用该方案</p>
+                                        <p>*HCV RNA＜6×106IU/mL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explain_close">
+                        <input class="explain_btn" type="button" onclick="unLockMySwiper(0)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+<div id="footer"></div>
+
+</body>
+</html>
